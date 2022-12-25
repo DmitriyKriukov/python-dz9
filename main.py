@@ -21,9 +21,6 @@ def welcome(message):
 
     bot.send_message(message.chat.id, 'Добро пожаловать! Выберите нужный вам пункт меню: ', reply_markup=markup)
 
-def random_number(message):
-    bot.send_message(message.chat.id, str(random.randint(1, 10)))
-
 with open('fun.txt', 'r', encoding='utf-8') as file:
     fun = file.read().split('\n')
 
@@ -38,7 +35,6 @@ def send_text(message):
         bot.send_message(message.chat.id, random.choice(fact))
     elif message.text == 'Дата и время':
         bot.send_message(message.chat.id, str(datetime.now()))
-
 
 
 bot.polling(none_stop=True)
